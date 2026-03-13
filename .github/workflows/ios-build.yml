@@ -26,8 +26,8 @@ jobs:
       - name: Select Xcode version
         run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
 
-      - name: Build iOS framework
-        run: ./gradlew :composeApp:linkDebugFrameworkIosArm64 :composeApp:linkDebugFrameworkIosX64 :composeApp:linkDebugFrameworkIosSimulatorArm64
+      - name: Build iOS framework (Debug)
+        run: ./gradlew :composeApp:linkDebugFrameworkIosArm64 :composeApp:linkDebugFrameworkIosSimulatorArm64
 
-      - name: Build iOS app (Release)
-        run: ./gradlew :composeApp:linkReleaseFrameworkIosArm64 :composeApp:linkReleaseFrameworkIosX64 :composeApp:linkReleaseFrameworkIosSimulatorArm64
+      - name: Build iOS framework (Release)
+        run: ./gradlew :composeApp:linkReleaseFrameworkIosArm64 :composeApp:linkReleaseFrameworkIosSimulatorArm64
