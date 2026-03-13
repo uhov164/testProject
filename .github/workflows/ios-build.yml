@@ -31,3 +31,21 @@ jobs:
 
       - name: Build iOS framework (Release)
         run: ./gradlew :composeApp:linkReleaseFrameworkIosArm64 :composeApp:linkReleaseFrameworkIosSimulatorArm64
+
+      - name: Upload Debug frameworks
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-debug-frameworks
+          path: |
+            composeApp/build/bin/iosArm64/debugFramework/ComposeApp.framework
+            composeApp/build/bin/iosSimulatorArm64/debugFramework/ComposeApp.framework
+          retention-days: 14
+
+      - name: Upload Release frameworks
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-release-frameworks
+          path: |
+            composeApp/build/bin/iosArm64/releaseFramework/ComposeApp.framework
+            composeApp/build/bin/iosSimulatorArm64/releaseFramework/ComposeApp.framework
+          retention-days: 14
